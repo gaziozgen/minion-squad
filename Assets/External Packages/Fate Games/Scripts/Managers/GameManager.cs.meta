@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 120c30ecf8a39bb49ae7e75c9b2c020d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - uiLoadingScreenPrefab: {fileID: 3310923560202025266, guid: 277c639a61f250e4db4bcc8f12680c2a,
+      type: 3}
+  - uiPrefab: {fileID: 1003886238241856403, guid: 8ae7f445510c80746a8196fe459d505f,
+      type: 3}
+  - uiLevelTextPrefab: {fileID: 178214954475192072, guid: 4e9babfa652e02049836bb3bf16169e3,
+      type: 3}
+  - uiStartTextPrefab: {fileID: 3298113697724959801, guid: 108009ef264c87b4682e98adaacd6070,
+      type: 3}
+  executionOrder: -50
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
