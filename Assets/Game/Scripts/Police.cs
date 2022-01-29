@@ -9,6 +9,7 @@ public class Police : MonoBehaviour
     public Transform target = null;
 
     [SerializeField] private List<Transform> points = null;
+    [SerializeField] private float seeRange = 10;
     [SerializeField] private float speed = 3.5f;
     [SerializeField] private float movingSpeed = 2;
     [SerializeField] private float holdHigh = 0.25f;
@@ -104,7 +105,7 @@ public class Police : MonoBehaviour
     {
         int layerMask = 1 << 6;
 
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 10, layerMask);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, seeRange, layerMask);
 
         Transform newTarget = null;
 

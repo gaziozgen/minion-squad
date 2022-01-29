@@ -69,6 +69,7 @@ public class Minion : MonoBehaviour
             }
         }
     }
+
     private void OnTriggerStay(Collider other) //---------------------------- to enter olabilir
     {
         if (other.CompareTag("PoliceCar"))
@@ -81,7 +82,7 @@ public class Minion : MonoBehaviour
             cannotBeLand = true;
             other.GetComponent<PoliceCar>().TakeMinion();
             transform.LeanMove(other.transform.position, 0.4f);
-            CancelMission(); // ------------------------------------------------ açmayý dene
+            //CancelMission(); // ------------------------------------------------
             transform.LeanScale(Vector3.zero, 0.5f).setOnComplete(() =>
             {
                 agent.enabled = false;
@@ -96,7 +97,7 @@ public class Minion : MonoBehaviour
                 capsuleCollider.enabled = false;
                 agent.enabled = false;
                 other.GetComponent<Truck>().TakeMinion();
-                CancelMission(); // ------------------------------------------------ açmayý dene
+                //CancelMission(); // ------------------------------------------------
                 gameObject.SetActive(false);
             }
             else if (other.CompareTag("Police"))
@@ -154,7 +155,7 @@ public class Minion : MonoBehaviour
                     {
                         if(target.CompareTag("Stuff"))
                         {
-                            target.GetComponent<Stuff>().CancelReservation();
+                            target.GetComponent<Stuff>().CancelReservation(this);
                         }
                         else
                         {
@@ -195,7 +196,7 @@ public class Minion : MonoBehaviour
             if (hitCollider.CompareTag("Stuff") && !helpCall && (length < min))
             {
                 Stuff stuff = hitCollider.GetComponent<Stuff>();
-                if (stuff.Available())
+                if (stuff.Available(this))
                 {
                     min = length;
                     closestTarget = hitCollider;
@@ -234,7 +235,7 @@ public class Minion : MonoBehaviour
             }
             else
             {
-                target = closestTarget.GetComponent<Stuff>().Reserve();
+                target = closestTarget.GetComponent<Stuff>().Reserve(this);
             }
             hadResevation = true;
         }
@@ -259,7 +260,7 @@ public class Minion : MonoBehaviour
         {
             if (target.CompareTag("Stuff"))
             {
-                target.GetComponent<Stuff>().CancelReservation();
+                target.GetComponent<Stuff>().CancelReservation(this);
             }
             else if (target.CompareTag("Police"))
             {
@@ -382,4 +383,5 @@ public class Minion : MonoBehaviour
     {
         hadResevation = false;
     }
+    
 }

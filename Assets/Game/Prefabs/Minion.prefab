@@ -476,7 +476,7 @@ MonoBehaviour:
   holderPositon: {fileID: 5715843756375490537}
   holdHigh: 0.25
   mesh: {fileID: 7957315628449869835}
-  seeRange: 10
+  seeRange: 8
 --- !u!95 &9144902685873470479
 Animator:
   serializedVersion: 3

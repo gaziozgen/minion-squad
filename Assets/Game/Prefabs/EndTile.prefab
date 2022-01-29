@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 373801949413944804}
   - component: {fileID: 373801949413174724}
   - component: {fileID: 373801949412175620}
+  - component: {fileID: 2181337174425741623}
   m_Layer: 0
   m_Name: road_cornerLines_mesh
   m_TagString: Untagged
@@ -81,6 +82,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2181337174425741623
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373801949414109636}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300002, guid: b51cbc8d131fcc9449a3c8cbee3b3661, type: 3}
 --- !u!1 &842920454645012344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,6 +1564,7 @@ GameObject:
   - component: {fileID: 6927790105294288580}
   - component: {fileID: 6927790105297712868}
   - component: {fileID: 6927790105296712740}
+  - component: {fileID: 2336546953128963318}
   m_Layer: 0
   m_Name: Env_Beach_Corner
   m_TagString: Untagged
@@ -1619,6 +1635,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2336546953128963318
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6927790105294777060}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 030a619c26185694da4fd9d251bc4f6a, type: 3}
 --- !u!1 &6953933494246522407
 GameObject:
   m_ObjectHideFlags: 0

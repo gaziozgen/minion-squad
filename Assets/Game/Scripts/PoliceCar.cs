@@ -7,6 +7,7 @@ using FateGames;
 public class PoliceCar : MonoBehaviour
 {
     [SerializeField] private float cooldownToRestart = 5f;
+    [SerializeField] private float seeRange = 10;
     [SerializeField] private int totalPolice = 1;
     [SerializeField] TMPro.TextMeshProUGUI policeCount = null;
     [SerializeField] TMPro.TextMeshProUGUI minionCount = null;
@@ -45,13 +46,13 @@ public class PoliceCar : MonoBehaviour
             if (currentPolices > 0)
             {
                 float dif = (target.position - transform.position).z;
-                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Time.deltaTime * dif * 3 / 4);
+                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Time.deltaTime * dif * 9 / 10);
 
-                if (currentPolices > 0)
+                if (dif < 3f)
                 {
                     int layerMask = 1 << 6;
 
-                    Collider[] hitColliders = Physics.OverlapSphere(transform.position, 8, layerMask);
+                    Collider[] hitColliders = Physics.OverlapSphere(transform.position, seeRange, layerMask);
 
                     foreach (var hitCollider in hitColliders)
                     {
@@ -78,6 +79,15 @@ public class PoliceCar : MonoBehaviour
                     Come();
                 }
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Final final = other.GetComponent<Final>();
+        if (final)
+        {
+            start = false;
         }
     }
 

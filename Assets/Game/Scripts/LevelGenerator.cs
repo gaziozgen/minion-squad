@@ -6,23 +6,27 @@ public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] private float levelLength = 100f;
 
-    [SerializeField] private GameObject policeCar = null;
     [SerializeField] private GameObject startTile = null;
     [SerializeField] private GameObject endTile = null;
     [SerializeField] private GameObject tile = null;
+    [SerializeField] private GameObject finish = null;
+
 
     [SerializeField] private Transform tileParent = null;
     [SerializeField] private Transform stuffParent = null;
     
     public void Generate()
     {
-        Instantiate(startTile, new Vector3(-3.25f, 0.75f, 0), Quaternion.identity, tileParent);
+        //Instantiate(startTile, new Vector3(-3.25f, 0.75f, 0), Quaternion.identity, tileParent);
         int i;
-        for (i = 0; i < levelLength; i += 5)
+        for (i = -10; i < levelLength + 10; i += 5)
         {
             Instantiate(tile, new Vector3(-3.25f, 0.75f, i), Quaternion.identity, tileParent);
         }
-        Instantiate(endTile, new Vector3(-3.25f, 0.75f, i), Quaternion.identity, tileParent);
+        //Instantiate(endTile, new Vector3(-3.25f, 0.75f, i), Quaternion.identity, tileParent);
+
+        Instantiate(finish, new Vector3(0, 0, levelLength), Quaternion.identity, tileParent);
+        Instantiate(finish, new Vector3(-9.6f, 0.75f, levelLength + 3), Quaternion.identity, tileParent);
     }
 
     public void ResetLevel()

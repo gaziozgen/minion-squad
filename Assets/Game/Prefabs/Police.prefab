@@ -148,6 +148,7 @@ MonoBehaviour:
   points:
   - {fileID: 2848732667825073548}
   - {fileID: 3724456801983503417}
+  seeRange: 10
   speed: 3.5
   movingSpeed: 2.5
   holdHigh: 0.7

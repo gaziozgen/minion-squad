@@ -3,7 +3,37 @@ guid: bfca418b40ec9054c99d7e9d38ebaf34
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cannon
+    second: {fileID: 2100000, guid: 4e3058ab5cc30704785eb76b010ff740, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gold
+    second: {fileID: 2100000, guid: d872093654590f64b870b16aed8f5663, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hull
+    second: {fileID: 2100000, guid: 7e18ace2a4298384b9271bf6afe2dec1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mast
+    second: {fileID: 2100000, guid: 59f25c6b805827847b5d2ad5849c030a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sail
+    second: {fileID: 2100000, guid: ac79d2a6ffcb78c4794955ef617ca671, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tex
+    second: {fileID: 2100000, guid: 0b0a2c05c4221e541bd39b5f40cd1da0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

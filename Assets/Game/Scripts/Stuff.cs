@@ -67,9 +67,10 @@ public class Stuff : MonoBehaviour
         }
     }
 
-    public bool Available()
+    public bool Available(Minion minion)
     {
-        if (reservedPlace < points.Count)
+        DeepCheck();
+        if (reservedPlace < points.Count && !reservedMinions.Contains(minion))
         {
             return true;
         }
@@ -79,11 +80,28 @@ public class Stuff : MonoBehaviour
         }
     }
 
-    public Transform Reserve()
+    private void DeepCheck()
+    {
+        if (reservedPlace == points.Count)
+        {
+            foreach (Minion minion in reservedMinions.ToArray())
+            {
+                if (!minion || !holders.Contains(minion) || !minion.GetTarget() || !minion.GetTarget().CompareTag("Stuff"))
+                {
+                    print("sorunlu bir minyon bulundu---------------------------------------------------hedefi: " + minion.GetTarget());
+                    reservedPlace -= 1;
+                    reservedMinions.Remove(minion);
+                }
+            }
+        }
+    }
+
+    public Transform Reserve(Minion minion)
     {
         if (reservedPlace < points.Count)
         {
             reservedPlace += 1;
+            reservedMinions.Add(minion);
             print(gameObject.name + " " + reservedPlace + " / " + points.Count);
             return transform;
         }
@@ -94,9 +112,10 @@ public class Stuff : MonoBehaviour
         }
     }
 
-    public void CancelReservation()
+    public void CancelReservation(Minion minion)
     {
         reservedPlace -= 1;
+        reservedMinions.Remove(minion);
     }
 
     public Transform TakePlace(Minion minion)
